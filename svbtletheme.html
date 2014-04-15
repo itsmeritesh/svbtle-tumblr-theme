@@ -494,6 +494,14 @@
                 border-color: {color:Post Title Colour};
                 color: {color:Post Title Colour};
             }
+            ol.notes a.tumblelog, ol.notes a.source_tumblelog { 
+					text-decoration:none;
+                    color: {color:Highlight Colour};				
+	    }
+	    #notes a.tumblelog, #notes a.source_tumblelog { 
+					text-decoration:none;
+                    color: {color:Highlight Colour};				
+	    }
             /* Start of Media Queries */
             /* Large desktops ----------- */
             @media only screen and (min-width: 1281px) {
@@ -936,6 +944,9 @@
                 <a href="/" title="{Title}">&larr; Read More</a>
             </div>
             {/block:PermalinkPage}
+            {block:PostNotes} 
+		{PostNotes}
+	    {/block:PostNotes}
         {/block:Posts}
         <!-- Pagination -->
         {block:Pagination}
