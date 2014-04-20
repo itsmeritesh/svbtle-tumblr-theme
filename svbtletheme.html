@@ -23,8 +23,8 @@
         <link href='http://static.tumblr.com/dbek3sy/VtLmbsu90/socialico.css' rel='stylesheet' type='text/css'>
         <!-- Meta -->
         <meta name="color:Sidebar Colour" content="#ffffff" />
-        <meta name="image:Logo 200x200" content="http://static.tumblr.com/morei1o/Yrbmmupfl/logo_200x200.png" />
-        <meta name="image:Logo Retina 400x400" content="http://static.tumblr.com/morei1o/us2mmuph2/logo_400x400.png" />
+        <meta name="image:Logo 200x200" content="http://static.tumblr.com/qdwzc8a/zh2n29ol7/itsmeritesh_tumblr_200x200.jpg" />
+        <meta name="image:Logo Retina 400x400" content="http://static.tumblr.com/qdwzc8a/N8Tn29ole/itsmeritesh_tumblr_400x400.jpg" />
         <meta name="color:Blog Name Colour" content="#282828" />
         <meta name="color:Description Colour" content="#282828" />
         <meta name="color:Highlight Colour" content="#73b6e5" />
@@ -161,7 +161,7 @@
     			background-position:center center;
             }
             #sidebar .logo h1 {
-                text-transform: uppercase;
+                /*text-transform: uppercase;*/
                 font-family: "Oswald", sans-serif;
                 font-size: 28px;
                 margin-left: 40px;
@@ -494,14 +494,26 @@
                 border-color: {color:Post Title Colour};
                 color: {color:Post Title Colour};
             }
-            ol.notes a.tumblelog, ol.notes a.source_tumblelog { 
-					text-decoration:none;
-                    color: {color:Highlight Colour};				
-	    }
-	    #notes a.tumblelog, #notes a.source_tumblelog { 
-					text-decoration:none;
-                    color: {color:Highlight Colour};				
-	    }
+            ol.notes {
+                font-size:17px;
+                line-height:24px;
+                margin-left:50px;
+                list-style-type: square;
+            }
+            ol.notes a {
+                color: {color:Highlight Colour};
+                text-decoration: none;
+           }
+           ol.notes a:hover {
+                -webkit-transition: all 0.5s ease;
+                -moz-transition: all 0.5s ease;
+                -ms-transition: all 0.5s ease;
+                -o-transition: all 0.5s ease;
+                transition: all 0.5s ease;
+                color: #fff;
+                background-color: {color:Highlight Colour};  
+           }
+                
             /* Start of Media Queries */
             /* Large desktops ----------- */
             @media only screen and (min-width: 1281px) {
@@ -944,9 +956,11 @@
                 <a href="/" title="{Title}">&larr; Read More</a>
             </div>
             {/block:PermalinkPage}
+            {block:NoteCount} <h3 style="margin-left:40px">{NoteCountWithLabel} on this post</h3> {/block:NoteCount}
+            
             {block:PostNotes} 
-		{PostNotes}
-	    {/block:PostNotes}
+ 	        	{PostNotes}
+    	    {/block:PostNotes}
         {/block:Posts}
         <!-- Pagination -->
         {block:Pagination}
